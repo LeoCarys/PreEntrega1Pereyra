@@ -1,0 +1,27 @@
+.Titulo{
+    font-size: 2rem;
+    background-color: aqua;
+    border-radius: 1rem;
+}
+
+
+.greeting{
+    font-size: 2rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+    margin: 1rem;
+    border-radius: 1rem;
+}
+
+.Carrito{
+    font-size: 1rem;
+    background-color: aqua;
+    border-radius: 1rem;
+    margin: 0.5rem;
+}
+.Equipos{
+    font-size: 1rem;
+    background-color: blue;
+}
