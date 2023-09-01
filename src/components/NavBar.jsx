@@ -1,22 +1,24 @@
 import React from 'react'
-import { Menu, MenuButton, MenuList, MenuItem, Button, Flex, Spacer, Box } from '@chakra-ui/react'
+import { Menu, MenuButton, MenuList, MenuItem, Button, Flex, Spacer, Box, Image } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import CartWidget from './CartWidget'
 import { Link } from 'react-router-dom'
+import G2icon from '../assets/g2-icon.jpg'
+import Fnaticicon from '../assets/fnatic-icon.png'
+import KoiIcon from '../assets/koiicon.webp'
 
 
 
 const NavBar = () => {
   return (
+    
     <Flex className='NavBar'>
       <Box p="2">
         <Link to={"/"}>
           <p className='Titulo'>Esports Shop</p>
         </Link>
       </Box>
-      <Box p="2" className='box-all'>
-        Todos los Productos
-      </Box>
+      
       <Box>
 
         <Menu>
@@ -26,38 +28,38 @@ const NavBar = () => {
           <MenuList>
             <Link to={`/category/${'cat1'}`}>
               <MenuItem minH='48px'>
-                {/* <Image
+                <Image
         boxSize='2rem'
         borderRadius='full'
-        src='https://placekitten.com/100/100'
+        src={G2icon}
         alt='Fluffybuns the destroyer'
         mr='12px'
-      /> */}
+      /> 
                 <span>G2 Esports</span>
               </MenuItem>
             </Link>
             <Link to={`/category/${'cat2'}`}>
               <MenuItem minH='40px'>
-                {/* <Image
+             <Image
         boxSize='2rem'
         borderRadius='full'
-        src='https://placekitten.com/120/120'
+        src={Fnaticicon}
         alt='Simon the pensive'
         mr='12px'
-      /> */}
+      /> 
                 <span>Fnatic</span>
               </MenuItem>
             </Link>
             <Link to={`/category/${'cat3'}`}>
               <MenuItem minH='40px'>
-                {/* <Image
+                  <Image
         boxSize='2rem'
         borderRadius='full'
-        src='https://placekitten.com/120/120'
+        src={KoiIcon}
         alt='Simon the pensive'
         mr='12px'
-      /> */}
-                <span>9z</span>
+      />  
+                <span>Koi</span>
               </MenuItem>
             </Link>
           </MenuList>

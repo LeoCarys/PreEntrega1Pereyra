@@ -1,10 +1,8 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { Card, CardBody, Stack, Heading, Divider, CardFooter, ButtonGroup, Button, Image, Text } from '@chakra-ui/react'
+import { Card, CardBody, Stack, Heading, Divider, CardFooter, ButtonGroup, Button, Image, Text, SimpleGrid } from '@chakra-ui/react'
 import ItemCount from './ItemCount'
-import Camiseta1 from '../assets/Camiseta-01.png'
-import { CartContext } from '../Context/ShoppingCartContext'
- import { useContext } from 'react'
+
 
 const ItemDetail = ({ productos }) => {
   const { id  } = useParams();
@@ -13,7 +11,8 @@ const ItemDetail = ({ productos }) => {
   
   
  return (
-   <div>
+  
+   <div className='container-detail'>
     {filterProducts.map((p) =>{
       return(
         <div key={p.id}>
@@ -40,10 +39,6 @@ const ItemDetail = ({ productos }) => {
   <ItemCount producto={p}/>
      <ButtonGroup spacing='2'>
       
-      
-     {/* <Button variant='ghost' colorScheme='blue'   onClick={() => handleAddToCart(p, selectedQuantity)}>
-        Add to cart
-      </Button>  */}
       <Link to={"/cart"}>
       <Button variant='ghost' colorScheme='blue'>
         Finalizar Compra

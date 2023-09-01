@@ -43,7 +43,7 @@ const ItemCount = ({ producto }) => {
       <button className="item-count-button" onClick={sumar}>
         +
       </button>
-      <button onClick={() => addToCart(prodcutoAgregar)}>
+      <button className='item-count-add' onClick={() => addToCart(prodcutoAgregar)}>
         Agregar Carrito
       </button>
 

@@ -1,10 +1,8 @@
 
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { Center, useStatStyles } from '@chakra-ui/react'
+import { Center, useStatStyles, CircularProgress } from '@chakra-ui/react'
 import ItemList from './ItemList'
-import Camiseta1 from '../assets/Camiseta-01.png'
-import Camiseta2 from '../assets/Camiseta-02.png'
 import { app } from '../App'
 import { getDocs, collection, getFirestore } from 'firebase/firestore'
 
@@ -65,9 +63,9 @@ const ItemListContainer = () => {
 
   return (
     <Center p='1rem'>
-      {loader
-        ? "Cargando contenido ..."
-        : category
+      {loader ? (
+        <CircularProgress isIndeterminate color='green.300' />
+      ) : category
           ? <ItemList productos={filterProducts} />
           : <ItemList productos={productos} />
       }

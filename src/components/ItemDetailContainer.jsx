@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import ItemDetail from './ItemDetail'
-import Camiseta1 from '../assets/Camiseta-01.png'
-import Camiseta2 from '../assets/Camiseta-02.png'
 import { app } from '../App'
 import { getDocs, collection, getFirestore } from 'firebase/firestore'
+import { CircularProgress } from '@chakra-ui/react'
 
 const ItemDetailContainer = () => {
 
@@ -59,13 +58,14 @@ const ItemDetailContainer = () => {
 
   return (
     <>
-      {loader
-        ? "Cargando contenido ..."
-        : <ItemDetail productos={productos} />
-      }
-
+      {loader ? (
+        <CircularProgress isIndeterminate color='green.300' />
+      ) : (
+        <ItemDetail productos={productos} />
+      )}
     </>
-  )
+  );
+  
 }
 
 export default ItemDetailContainer

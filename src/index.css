@@ -39,6 +39,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+
   }
   
   .item-count-buttons {
@@ -54,6 +57,8 @@
     border-radius: 50%;
     width: 40px;
     height: 40px;
+    display: flex;
+    justify-content: center;
     
   }
   
@@ -72,4 +77,159 @@
   .item-count-button:hover {
     background-color: #0056b3;
   }
+
+  .item-count-add{
+    font-size: 25px;
+    font-weight: bolder;
   
+  }
+  
+  .pepito{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+  }
+
+  .container-detail{
+    display: flex;
+    justify-content: center;
+  }
+
+  
+
+  /* Estilos para el contenedor principal */
+.cart {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Estilos para cada elemento del carrito */
+.cartItem {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.itemInfo {
+  margin-bottom: 10px;
+}
+
+
+.itemName {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+
+.itemPrice {
+  font-size: 16px;
+}
+
+
+.itemStock {
+  font-size: 14px;
+}
+
+
+.itemCantidad {
+  font-size: 14px;
+}
+
+
+.itemImage {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.itemActions {
+  margin-top: 10px;
+}
+
+
+.detalle {
+  margin-top: 20px;
+  text-align: right;
+}
+
+
+.detalle button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+.cartItem button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.cartItem button:hover {
+  background-color: #c82333;
+}
+
+
+
+/* Estilos para el formulario */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+}
+
+/* Estilos para los grupos de entrada de texto */
+.inputGroup {
+  margin-bottom: 15px;
+}
+
+/* Estilos para las etiquetas de entrada de texto */
+.inputGroup label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Estilos para los campos de entrada de texto */
+.inputGroup input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Estilos para el botón de enviar */
+form button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+/* Estilos para el mensaje de confirmación de la orden */
+form p {
+  font-weight: bold;
+  margin-top: 15px;
+  text-align: center;
+}

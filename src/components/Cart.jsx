@@ -14,15 +14,17 @@ const Cart = () => {
   }, [cart])
   return (
     <>
-      <div className='cart'>
+      <div className="cart">
         {cart.map(item => (
-          <div className="cartItem">
-            <div>{item.nombre}</div>
-            <div>{item.price}</div>
-            <div>{item.stock}</div>
-            <div>{item.cantidad}</div>
-            <img src={item.image}></img>
-            <div>
+          <div className="cartItem" key={item.id}>
+            <div className="itemInfo">
+              <div className="itemName">{item.nombre}</div>
+              <div className="itemPrice">${item.price}</div>
+              <div className="itemStock">Stock: {item.stock}</div>
+              <div className="itemCantidad">Cantidad: {item.cantidad}</div>
+              <img className="itemImage" src={item.image} alt={item.nombre} />
+            </div>
+            <div className="itemActions">
               <button onClick={() => removeItem(item.id)}>Eliminar</button>
             </div>
           </div>
@@ -30,9 +32,11 @@ const Cart = () => {
       </div>
       <div className="detalle">
         <p>Total: ${total}</p>
-        <Link to={"/checkout"}>
-          <button>Comprar</button></Link>
+        <Link to="/checkout">
+          <button>Comprar</button>
+        </Link>
       </div>
+
     </>
   )
 }
