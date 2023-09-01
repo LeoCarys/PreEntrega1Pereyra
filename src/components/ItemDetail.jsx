@@ -1,14 +1,17 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Card, CardBody, Stack, Heading, Divider, CardFooter, ButtonGroup, Button, Image, Text } from '@chakra-ui/react'
 import ItemCount from './ItemCount'
 import Camiseta1 from '../assets/Camiseta-01.png'
+import { CartContext } from '../Context/ShoppingCartContext'
+ import { useContext } from 'react'
 
 const ItemDetail = ({ productos }) => {
   const { id  } = useParams();
 
   const filterProducts = productos.filter((producto) => producto.id == id)
-
+  
+  
  return (
    <div>
     {filterProducts.map((p) =>{
@@ -17,7 +20,7 @@ const ItemDetail = ({ productos }) => {
           <Card maxW='sm'>
   <CardBody>
         <Image
-        src={Camiseta1}
+        src={p.image}
         alt='Camiseta-01 G2'
       borderRadius='lg'
     />
@@ -26,24 +29,27 @@ const ItemDetail = ({ productos }) => {
       <Text>
         {p.description}
       </Text>
-      <Text>
-        {p.category}
+     
+      <Text color='blue.600' fontSize='2xl'>
+        ${p.price}
       </Text>
-      {/* <Text color='blue.600' fontSize='2xl'>
-        
-      </Text> */}
     </Stack>
   </CardBody>
   <Divider />
   <CardFooter>
-    {/* <ButtonGroup spacing='2'>
-      <Button variant='solid' colorScheme='blue'>
-      </Button>
-      <Button variant='ghost' colorScheme='blue'>
+  <ItemCount producto={p}/>
+     <ButtonGroup spacing='2'>
+      
+      
+     {/* <Button variant='ghost' colorScheme='blue'   onClick={() => handleAddToCart(p, selectedQuantity)}>
         Add to cart
+      </Button>  */}
+      <Link to={"/cart"}>
+      <Button variant='ghost' colorScheme='blue'>
+        Finalizar Compra
       </Button>
-    </ButtonGroup> */}
-        <ItemCount/>
+      </Link>
+    </ButtonGroup> 
     
   </CardFooter>
   </Card>

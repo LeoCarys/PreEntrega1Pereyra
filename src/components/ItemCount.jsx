@@ -1,21 +1,38 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { CartContext } from '../Context/ShoppingCartContext';
 
 
-const ItemCount = () => {
-  const [contador, setContador] = useState(0);
+const ItemCount = ({ producto }) => {
+
+  const [contador, setContador] = useState(1);
 
   const sumar = () => {
-    setContador(contador + 1);
-  };
+    if (contador < producto.stock) {
+      setContador(contador + 1)
 
-  const restar = () => {
-    if (contador > 0) {
-      setContador(contador - 1);
     }
   };
 
- 
+  const restar = () => {
+    if (contador > 1) {
+      setContador(contador - 1);
+
+    }
+  };
+  const [prodcutoAgregar, setProductoAgregar] = useState();
+
+  useEffect(() => {
+    const cantidad = contador
+    setProductoAgregar({ ...producto, cantidad })
+  }, [contador])
+
+
+  const { addToCart } = useContext(CartContext)
+
+
+
+
+
 
   return (
     <div className="item-count-card">
@@ -26,6 +43,11 @@ const ItemCount = () => {
       <button className="item-count-button" onClick={sumar}>
         +
       </button>
+      <button onClick={() => addToCart(prodcutoAgregar)}>
+        Agregar Carrito
+      </button>
+
+
     </div>
   );
 };

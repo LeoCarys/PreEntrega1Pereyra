@@ -1,5 +1,4 @@
 import React from 'react'
-import Camiseta1 from '../assets/Camiseta-01.png'
 import { Card, CardBody, Stack, Heading, Divider, CardFooter, ButtonGroup, Button, Image, Text } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 
@@ -8,12 +7,15 @@ const Item = ({
     nombre,
     description,  
     category,
+    image,
+    price,
 }) => {
   return (
+    
     <Card maxW='sm'>
   <CardBody>
     <Image
-      src={Camiseta1}
+      src={image}
       alt='Camiseta-01 G2'
       borderRadius='lg'
     />
