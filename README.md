@@ -3,7 +3,7 @@
 ### Comision: 47120
 ### Alumno: Leonardo Pereyra
 
-![](./src/assets/Gif.gif)
+![](./src/assets/123.gif)
 
 # Tienda de Camisetas de Esports
 
@@ -18,6 +18,10 @@ Este proyecto es una tienda en línea que se centra en la venta de camisetas de 
 
 - Explora una amplia selección de camisetas de equipos de esports.
 - Filtra camisetas por equipos.
+- Agrega a Carrito
+- Quita del Carrito
+- Muestra su id de compra
+
 
 
 ## Tecnologías Utilizadas
