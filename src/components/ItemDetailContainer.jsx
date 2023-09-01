@@ -37,22 +37,7 @@ const ItemDetailContainer = () => {
       }).finally(() => setLoader(false))
   }, [])
 
-  // const getProductos = new Promise((resolve, reject) =>{
-  //   if(productos.length > 0){
-  //     setTimeout(()=>{
-  //       resolve(productos)
-  //     }, 2000)
-  //   } else {
-  //     reject (new Error("No hay Datos"))
-  //   }
-  // })
-
-  // getProductos
-  // .then((res)=> {
-  // })
-  // .catch((error)=>{
-  //   console.log(error)
-  // })
+  
 
 
 

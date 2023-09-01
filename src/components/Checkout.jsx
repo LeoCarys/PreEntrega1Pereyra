@@ -10,7 +10,7 @@ const Checkout = () => {
 
     const { cart, resetCart } = useContext(CartContext)
 
-    // PAara cada campo
+    
     const [nombre, setNombre] = useState("")
     const [domicilio, setDomicilio] = useState("")
     const [telefono, setTelefono] = useState("")
